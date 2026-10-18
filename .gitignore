@@ -11,5 +11,9 @@ myenv/
 .env
 .env.local
 
+# Generated RAG artifacts
+data/
+*.egg-info/
+
 #OS
 .DS_Store
