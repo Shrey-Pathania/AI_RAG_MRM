@@ -43,3 +43,25 @@ class ValidationReport:
     error_count: int
     warning_count: int
     issues: list[ValidationIssue]
+
+
+@dataclass(frozen=True)
+class ChunkDocument:
+    """A citation-preserving, retrieval-ready unit of source text."""
+
+    chunk_id: str
+    document_name: str
+    document_path: str
+    document_sha256: str
+    page_number: int
+    chunk_index_on_page: int
+    text: str
+
+
+@dataclass(frozen=True)
+class EmbeddedChunk:
+    """A retrieval chunk paired with the numerical representation used for search."""
+
+    chunk: ChunkDocument
+    embedding_model: str
+    embedding: list[float]

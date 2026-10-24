@@ -9,6 +9,7 @@ myenv/
 #Secrets
 *.key
 .env
+.env_old
 .env.local
 
 # Generated RAG artifacts

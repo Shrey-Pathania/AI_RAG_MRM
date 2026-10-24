@@ -29,3 +29,21 @@ python -m mrm_assistant.main ingest
 
 Generated files are written to `data/` and deliberately excluded from Git. Run the
 quality checks with `python -m pytest`.
+
+## Create retrieval chunks
+
+Split extracted pages into overlap-aware chunks while retaining the source document and
+page number on every chunk:
+
+```bash
+python -m mrm_assistant.main chunk
+```
+
+## Create the local vector index
+
+Generate embeddings for every chunk using the configured OpenAI-compatible provider.
+This sends chunk text to that provider and writes a local index to `data/`.
+
+```bash
+python -m mrm_assistant.main index
+```

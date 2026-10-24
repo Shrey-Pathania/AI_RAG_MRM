@@ -16,6 +16,7 @@ class Settings:
     data_dir: Path
     openai_api_key: str | None
     openai_base_url: str | None
+    embedding_model: str
 
     @classmethod
     def from_environment(cls, project_root: Path | None = None) -> "Settings":
@@ -27,4 +28,5 @@ class Settings:
             data_dir=root / "data",
             openai_api_key=os.getenv("OPENAI_API_KEY"),
             openai_base_url=os.getenv("OPENAI_BASE_URL"),
+            embedding_model=os.getenv("EMBEDDING_MODEL", "text-embedding-3-small"),
         )
