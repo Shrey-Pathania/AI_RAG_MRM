@@ -1,6 +1,6 @@
 [project]
 name = "mrm-knowledge-assistant"
-version = "0.1.0"
+version = "0.2.0"
 description = "A citation-first RAG assistant for Model Risk Management guidance."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -8,6 +8,7 @@ dependencies = [
     "openai>=1.0.0",
     "pypdf>=5.0.0",
     "python-dotenv>=1.0.0",
+    "chromadb>=1.0.0,<2.0.0",
 ]
 
 [project.optional-dependencies]

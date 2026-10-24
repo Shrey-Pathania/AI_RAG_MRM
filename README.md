@@ -47,3 +47,18 @@ This sends chunk text to that provider and writes a local index to `data/`.
 ```bash
 python -m mrm_assistant.main index
 ```
+
+## ChromaDB experiment
+
+Store the existing embeddings, chunk text, and citation metadata in a persistent
+local ChromaDB collection:
+
+```bash
+python -m mrm_assistant.main index-chroma
+```
+
+Search the collection with a question:
+
+```bash
+python -m mrm_assistant.main search-chroma "What is model validation?"
+```

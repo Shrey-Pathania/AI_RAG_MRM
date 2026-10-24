@@ -65,3 +65,13 @@ class EmbeddedChunk:
     chunk: ChunkDocument
     embedding_model: str
     embedding: list[float]
+
+
+@dataclass(frozen=True)
+class RetrievedChunk:
+    """A chunk returned by a vector store, with its similarity distance."""
+
+    chunk_id: str
+    text: str
+    distance: float
+    metadata: dict[str, str | int | float | bool]

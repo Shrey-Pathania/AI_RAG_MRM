@@ -14,6 +14,7 @@ class Settings:
     project_root: Path
     source_dir: Path
     data_dir: Path
+    chroma_dir: Path
     openai_api_key: str | None
     openai_base_url: str | None
     embedding_model: str
@@ -26,6 +27,7 @@ class Settings:
             project_root=root,
             source_dir=root / "docs",
             data_dir=root / "data",
+            chroma_dir=root / "data" / "chroma",
             openai_api_key=os.getenv("OPENAI_API_KEY"),
             openai_base_url=os.getenv("OPENAI_BASE_URL"),
             embedding_model=os.getenv("EMBEDDING_MODEL", "text-embedding-3-small"),
